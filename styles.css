@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+body{
+    background-color: rgb(226, 233, 197);
+    display:flex;
+    min-height:100vh;
+    justify-content: center;
+    align-items: center;
+    font-size:2em;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.container{
+    background-color: rgb(164, 224, 182);
+    width: 400px;
+    height:600px;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.output{
+width:400px;
+height:100px;
+background-color: black;
+border:solid 2px rgb(255, 255, 255);
+color: white;
+display:flex;
+align-items: center;
+justify-content: end;
+padding:1em;
+}
+.firstline, .secondline, .thirdline, .fourthline, .finalline{
+    display:flex;
+}
+#DEL, #equal{
+    width:200px;
+    height:100px;
+    border:solid 2px rgb(255, 255, 255);
+    /* place the text in the cell in the middle */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.cell{
+    width:100px;
+    height:100px;
+    border:solid 2px rgb(255, 255, 255);
+    /* place the text in the cell in the middle */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell:hover,
+.cell-large:hover {
+    background-color: rgb(49, 136, 103);
+    color:rgb(253, 245, 240);
+    cursor: pointer;
+}
