@@ -1,61 +1,86 @@
-*{
-    box-sizing: border-box;
-    margin:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
-body{
-    background-color: rgb(226, 233, 197);
-    display:flex;
-    min-height:100vh;
-    justify-content: center;
-    align-items: center;
-    font-size:2em;
-    font-weight: bold;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+body {
+  background-color: rgb(226, 233, 197);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.container{
-    background-color: rgb(164, 224, 182);
-    width: 400px;
-    height:600px;
-    display:grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+.container {
+  background-color: rgb(164, 224, 182);
+  width: 400px;
+  height: 600px;
+  display: grid;
+  grid-template-rows: repeat(5,100px);
 }
-.output{
-width:400px;
-height:100px;
-background-color: black;
-border:solid 2px rgb(255, 255, 255);
-color: white;
-display:flex;
-align-items: center;
-justify-content: end;
-padding:1em;
+.output {
+  width: 400px;
+  height: 100px;
+  background-color: black;
+  border: solid 2px rgb(255, 255, 255);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  word-wrap: break-word;
+  word-break: break-all;
 }
-.firstline, .secondline, .thirdline, .fourthline, .finalline{
-    display:flex;
+.history {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
-#DEL, #equal{
-    width:200px;
-    height:100px;
-    border:solid 2px rgb(255, 255, 255);
-    /* place the text in the cell in the middle */
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    
+.mainoutput {
+  color: rgb(255, 255, 255);
 }
-.cell{
-    width:100px;
-    height:100px;
-    border:solid 2px rgb(255, 255, 255);
-    /* place the text in the cell in the middle */
-    display:flex;
-    align-items: center;
-    justify-content: center;
+.resultSaver {
+  font-size: 1.5rem;
+  color: rgb(197, 197, 197);
+  margin-right: 7px;
+  display:flex;
+}
+.firstline,
+.secondline,
+.thirdline,
+.fourthline,
+.finalline {
+  display: flex;
+  flex-wrap: wrap;
+}
+#DEL,
+#equal {
+  width: 200px;
+  height: 100px;
+  border: solid 2px rgb(255, 255, 255);
+  /* place the text in the cell in the middle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  border: solid 2px rgb(255, 255, 255);
+  /* place the text in the cell in the middle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(192, 233, 190);
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .cell:hover,
 .cell-large:hover {
-    background-color: rgb(49, 136, 103);
-    color:rgb(253, 245, 240);
-    cursor: pointer;
+  background-color: rgb(49, 136, 103);
+  color: rgb(253, 245, 240);
+  cursor: pointer;
 }

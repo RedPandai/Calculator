@@ -1,33 +1,31 @@
-const cells = document.querySelectorAll(".cell");
-const output = document.querySelector(".output");
-//1. add listener to each button and output relative values
+import Calculator from "./Calculator.js";
 
-cells.forEach((element) => {
-  element.addEventListener("click", (e) => {
-    //2. put the value in the output
-    if (e.target.innerText === "AC") {
-      //click AC to clear the output
-      output.innerText = "";
-    } else if (e.target.innerText === "=") {
-      calculate(output.innerText);
-    } else if (e.target.innerText === "DEL") {
-      //click the DEL to delte last number
-      output.innerText = output.innerText.slice(0, -1);
-    } else output.innerText += e.target.innerText;
-  });
-});
+//display data
+const primaryOperandShow = document.querySelector("[data-primary-operand]");
+const secondaryOperandShow = document.querySelector("[data-secondary-operand");
+const operationShow = document.querySelector("[data-operation]");
 
-//click the = to calculate
-//calcutate function
-function calculate(a, b) {
-  switch ((a, b)) {
-    case "+":
-      return a + b;
-    case "*":
-      return a * b;
-    case "-":
-      return a - b;
-    case "÷":
-      return a / b;
+//add listener to each button and output relative values
+const calculator = new Calculator(
+  primaryOperandShow,
+  secondaryOperandShow,
+  operationShow
+);
+document.addEventListener("click", (e) => {
+  //put the value in the output
+  if (e.target.matches("[data-all-clear]")) {
+    //click AC to clear the output
+    calculator.clear();
+    console.log("clear");
+  } else if (e.target.matches(".number")) {
+    //click the = to calculate, 还要保存到上方
+    calculator.addDigit(e.target.textContent);
+  } else if (e.target.matches("[data-delete]")) {
+    //click the DEL to delte last number, （计算结果要直接删除）
+    calculator.removeDigit();
+  } else if (e.target.matches("[data-operation]")) {
+    calculator.chooseOperation(e.target.textContent);
+  } else if (e.target.matches("[data-equals]")) {
+    calculator.evaluate();
   }
-}
+});

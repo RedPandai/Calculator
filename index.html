@@ -6,38 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link href="styles.css" rel="stylesheet"/>
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module"></script>
 </head>
 <body>
     <div class="container">
-        <div id='output' class="output"></div>
+        <div id='output' class="output">
+            <div class="history">
+                <div class="resultSaver" data-secondary-operand></div>
+                <div data-operation></div>
+           </div>
+           <div class="mainoutput" data-primary-operand></div>
+        </div>
         <div class="firstline">
-            <div id ='AC' class="cell">AC</div>
-            <div id ='DEL' class="cell">DEL</div>
-            <div id ='÷' class="cell">÷</div>
-        </div>
+            <button id ='AC' data-all-clear class="cell">AC</button>
+            <button id ='DEL' data-delete class="cell">DEL</button>
+            <button id ='÷' data-operation class="cell">÷</button>
+        </button>
         <div class="secondline">
-            <div id ='1' class="cell">1</div>
-            <div id ='2' class="cell">2</div>
-            <div id ='3' class="cell">3</div>
-            <div id ='4' class="cell">*</div>
-        </div>
+            <button id ='1' class="cell number">1</button>
+            <button id ='2' class="cell number">2</button>
+            <button id ='3' class="cell number">3</button>
+            <button id ='4' data-operation class="cell">*</button>
+        </button>
         <div class="thirdline">
-            <div id ='4' class="cell">4</div>
-            <div id ='5' class="cell">5</div>
-            <div id ='6' class="cell">6</div>
-            <div id ='+' class="cell">+</div>
+            <button id ='4' class="cell number">4</button>
+            <button id ='5' class="cell number">5</button>
+            <button id ='6' class="cell number">6</button>
+            <button id ='+' data-operation class="cell">+</button>
         </div>
         <div class="fourthline">
-            <div id ='7' class="cell">7</div>
-            <div id ='8' class="cell">8</div>
-            <div id ='9' class="cell">9</div>
-            <div id ='-' class="cell">-</div>
+            <button id ='7' class="cell number">7</button>
+            <button id ='8' class="cell number">8</button>
+            <button id ='9' class="cell number">9</button>
+            <button id ='-' data-operation class="cell">-</button>
         </div>
         <div class="finalline">
-            <div id ='.' class="cell">.</div>
-            <div id ='0' class="cell">0</div>
-            <div id ='equal' class="cell">=</div>
+            <button id ='.' class="cell number">.</button>
+            <button id ='0' class="cell number">0</button>
+            <button id ='equal'data-equals class="cell">=</button>
         </div>
     </div>
 </body>
